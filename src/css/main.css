@@ -1,0 +1,124 @@
+/* FONT FACE */
+@font-face {
+  font-family: SpaceGrotesk-Bold;
+  src: url(../assets/fonts/SpaceGrotesk-Bold.ttf);
+}
+@font-face {
+  font-family: SpaceGrotesk-SemiBold;
+  src: url(../assets/fonts/SpaceGrotesk-SemiBold.ttf);
+}
+@font-face {
+  font-family: SpaceGrotesk-Regular;
+  src: url(../assets/fonts/SpaceGrotesk-Regular.ttf);
+}
+@font-face {
+  font-family: SpaceGrotesk-Medium;
+  src: url(../assets/fonts/SpaceGrotesk-Medium.ttf);
+}
+@font-face {
+  font-family: SpaceGrotesk-Light;
+  src: url(../assets/fonts/SpaceGrotesk-Light.ttf);
+}
+
+:root {
+  /* VARIABLES */
+  /* font weight */
+  --h1-font: "SpaceGrotesk-Bold";
+  --h2-font: "SpaceGrotesk-Bold";
+  --h3-font: "SpaceGrotesk-Bold";
+  --h4-font: "SpaceGrotesk-Bold";
+  --p-font: "SpaceGrotesk-Regular";
+  --p-bold-font: "SpaceGrotesk-SemiBold";
+  --quote-font: "SpaceGrotesk-Light";
+  --quote-signature-font: "SpaceGrotesk-Medium";
+  --footer-link-font: "SpaceGrotesk-Regular";
+  --toki-address-font: "SpaceGrotesk-Regular";
+  --cta-font: "SpaceGrotesk-Medium";
+  --cta-click-font: "SpaceGrotesk-Bold";
+
+  /* font size */
+  --h1-font-size: 42px;
+  --h2-font-size: 42px;
+  --h3-font-size: 24px;
+  --h4-font-size: 20px;
+  --p-font-size: 16px;
+  --p-bold-font-size: 14px;
+  --quote-font-size: 16px;
+  --quote-signature-font-size: 14px;
+  --footer-link-font-size: 16px;
+  --toki-address-font-size: 14px;
+  --cta-font-size: 15px;
+
+  /* colors */
+  --primary-color: #f2f1ef;
+  --secondary-color: #aebadb;
+  --accent-color: #61745e;
+  --p-brown: #40302f;
+  --dark-brown: #191211;
+  --cta-text-color: #40302f;
+  --cta-hover-background: #e5e5e4;
+  --green-cta-text-color: #eaeaea;
+  --cta-hover-bacckground-color: rgba(25, 18, 17, 0.75);
+
+  /* margin */
+  --main-margin: 95px;
+  --narrow-margin: 50px;
+
+  /* DEFINED FONTS */
+  h1 {
+    font-family: var(--h1-font);
+    font-size: var(--h1-font-size);
+  }
+  h2 {
+    font-family: var(--h2-font);
+    font-size: var(--h2-font-size);
+  }
+  h3 {
+    font-family: var(--h3-font);
+    font-size: var(--h3-font-size);
+  }
+  h4 {
+    font-family: var(--h4-font);
+    font-size: var(--h4-font-size);
+  }
+  p {
+    font-family: var(--p-font);
+    font-size: var(--p-font-size);
+  }
+  .p-bold {
+    font-family: var(--p-bold-font);
+    font-size: var(--p-bold-font-size);
+  }
+  .quote {
+    font-family: var(--quote-font);
+    font-size: var(--quote-font-size);
+  }
+  .quote-signature {
+    font-family: var(--quote-signature-font);
+    font-size: var(--quote-signature-font-size);
+  }
+  .footer-link {
+    font-family: var(--footer-link-font);
+    font-size: var(--footer-link-font-size);
+    :hover {
+      text-decoration: underline;
+    }
+  }
+  .toki-address {
+    font-family: var(--toki-address-font);
+    font-size: var(--toki-address-font-size);
+  }
+  .cta {
+    font-family: var(--cta-font);
+    font-size: var(--cta-font-size);
+    :active {
+      font-family: var(--cta-click-font);
+    }
+  }
+
+  /* BACKGROUND COLOR AND MARGIN */
+  body {
+    background-color: var(--primary-color);
+    margin: 95px;
+  }
+}
