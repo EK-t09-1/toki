@@ -1,0 +1,214 @@
+---
+const {CTAText, CTALink} = Astro.props;
+---
+
+<header>
+  <section class="menu">
+    <div id="menu-button" class="button" aria-label="Open menu">
+      <span class="hamburger-lines" aria-hidden="true">
+        <span class="hamburger-line hamburger-line-top"></span>
+        <span class="hamburger-line hamburger-line-middle"></span>
+        <span class="hamburger-line hamburger-line-bottom"></span>
+      </span>
+    </div>
+    <nav id="menu-content">
+      <ul>
+        <li><a href="/cases">Cases</a></li>
+        <li><a href="">TÓKI flow</a></li>
+        <li><a href="">Certifications</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="">About TÓKI</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <style>
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    #menu-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition:
+        opacity 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+        transform 0.45s cubic-bezier(0.33, 1.4, 0.68, 1);
+      background-color: var(--primary-color);
+      position: absolute;
+      z-index: 99;
+      top: 10px;
+      left: 10px;
+    }
+
+    #menu-content.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+
+      border-radius: 5px;
+      box-shadow:
+        inset 5px 5px 20px var(--primary-color),
+        inset -5px -5px 20px var(--cta-hover-background-color);
+    }
+
+    .button:hover {
+      cursor: pointer;
+    }
+
+    .button {
+      display: flex;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+      height: 35px;
+      width: 35px;
+      border-radius: 9999px;
+      background: var(--primary-color);
+      box-shadow:
+        5px 5px 10px var(--cta-hover-background-color),
+        -5px -5px 10px #f0f0ef;
+    }
+
+    .button.open {
+      border-radius: 50%;
+      background: #e0e0e0;
+      box-shadow:
+        /* inset 10px 10px 16px #d5d5d5,
+        inset -10px -10px 10px var(--cta-hover-background-color); */
+        inset 5px 5px 7px var(--cta-hover-background-color),
+        inset -5px -5px 10px #dadad9;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 30px 0;
+    }
+
+    li {
+      margin: 25px 0;
+      font-family: var(--cta-font);
+      text-transform: uppercase;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: var(--cta-text-color);
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .hamburger-lines {
+      display: inline-block;
+      width: 20px;
+      height: 14px;
+      position: relative;
+    }
+
+    .hamburger-line {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--dark-brown);
+      border-radius: 2px;
+      transition:
+        transform 0.3s ease,
+        opacity 0.25s ease,
+        top 0.3s ease;
+    }
+
+    .hamburger-line-top {
+      top: 0;
+    }
+
+    .hamburger-line-middle {
+      top: 6px;
+    }
+
+    .hamburger-line-bottom {
+      top: 12px;
+    }
+
+    .button.open .hamburger-line-top {
+      top: 6px;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .button.open .hamburger-line-middle {
+      opacity: 0;
+      transform: translateX(-50%) scaleX(0);
+    }
+
+    .button.open .hamburger-line-bottom {
+      top: 6px;
+      transform: translateX(-50%) rotate(-45deg);
+    }
+
+    @media (max-width: 500px) {
+      header.open {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 101;
+        background: var(--primary-color);
+      }
+
+      #menu-content {
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menu-content.open {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #menu-content ul {
+        margin: 0;
+        font-size: larger;
+      }
+
+      li {
+      margin: 30px 0;
+    }
+  </style>
+
+  <script>
+    const menuButton = document.getElementById("menu-button");
+    const menuContent = document.getElementById("menu-content");
+    const header = document.querySelector("header");
+
+    menuButton.addEventListener("click", () => {
+      menuButton.classList.toggle("open");
+      menuContent.classList.toggle("open");
+      header.classList.toggle("open");
+      console.log("Menu button clicked");
+    });
+  </script>
+</header>

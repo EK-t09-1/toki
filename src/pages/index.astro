@@ -2,6 +2,7 @@
 import "../css/main.css";
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
+import Header from "../components/Header.astro";
 import ButtonWhite from "../components/ButtonWhite.astro";
 import ButtonGreen from "../components/ButtonGreen.astro";
 import CaseSection from "../components/CaseSection.astro";
@@ -15,6 +16,12 @@ const data = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/peopl
 ---
 
 <Layout>
+  <Header />
+  <main>
+    <section class="reviews-section">
+      {data.map((person) => <Reviews {person} />)}
+    </section>
+  </main>
   <CaseSection />
   <section class="reviews-section">
     {data.map((person) => <Reviews {person} />)}
@@ -22,6 +29,10 @@ const data = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/peopl
 </Layout>
 
 <style>
+  .main {
+    position: relative;
+  }
+
   .reviews-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
