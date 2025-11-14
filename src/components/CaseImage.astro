@@ -1,0 +1,21 @@
+---
+const { costumercase } = Astro.props;
+---
+
+<article>
+  <img src={costumercase.image_url} alt="" />
+</article>
+
+<style>
+  article:hover {
+  }
+  img {
+    width: 365px;
+    height: 305px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  article {
+    margin: auto;
+  }
+</style>
