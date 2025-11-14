@@ -1,6 +1,9 @@
 ---
+import "../css/main.css";
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
+import ButtonWhite from "../components/ButtonWhite.astro";
+import ButtonGreen from "../components/ButtonGreen.astro";
 
 const data = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people", {
   method: "GET",
@@ -23,9 +26,10 @@ console.log(data);
   .reviews-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color: #61745e;
-    color: #f2f1ef;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
     gap: 20px;
     padding: 20px;
+    margin: 0;
   }
 </style>
