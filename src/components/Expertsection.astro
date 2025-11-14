@@ -1,0 +1,80 @@
+---
+import "../css/main.css";
+import ButtonWhite from "./ButtonWhite.astro";
+---
+
+<section class="experts-section">
+  <div class="experts-content">
+    <h2>Meet our experts</h2>
+    <p>
+      With over a decade of experience and a passion for purposeful design, TÓKI understands how to create packaging that not only stands out on the shelves but also streamlines production and minimizes supply chain risks, helping brands save money
+      while making a lasting impression.
+    </p>
+
+    <ButtonWhite CTAText="LEARN MORE" CTALink="/index" />
+  </div>
+
+  <div class="experts-image">
+    <img src="src/assets/expertimage.webp" alt="Two experts and dog" />
+  </div>
+</section>
+
+<style>
+  .experts-section {
+    padding: 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  /* 89px venstre-margin til teksten */
+  .experts-content {
+    max-width: 480px;
+    margin-left: 89px;
+  }
+
+  /* 👇 32px højre-margin på billedet */
+  .experts-image {
+    margin-right: 32px;
+  }
+
+  .experts-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  .experts-content h2 {
+    font-family: var(--h2-font);
+    font-size: var(--h2-font-size);
+    color: (--dark-brown);
+  }
+
+  .experts-content p {
+    font-family: var(--p-font);
+    font-size: var(--p-font-size);
+    margin-bottom: 40px;
+    color: (--p-brown);
+  }
+
+  /* --- Responsiv --- */
+  @media (max-width: 900px) {
+    .experts-section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    /* Fjern margins på mobil */
+    .experts-content {
+      margin-left: 0;
+      padding: 0 24px;
+    }
+
+    .experts-image {
+      margin-right: 0;
+    }
+  }
+</style>
