@@ -14,5 +14,18 @@ console.log(data);
 ---
 
 <Layout>
-  {data.map((person) => <Reviews {person} />)}
+  <section class="reviews-section">
+    {data.map((person) => <Reviews {person} />)}
+  </section>
 </Layout>
+
+<style>
+  .reviews-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #61745e;
+    color: #f2f1ef;
+    gap: 20px;
+    padding: 20px;
+  }
+</style>
