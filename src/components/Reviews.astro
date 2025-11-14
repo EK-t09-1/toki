@@ -2,6 +2,22 @@
 const {person} = Astro.props;
 ---
 
-<div>
-  <h3>{person.first_name}</h3>
-</div>
+<article>
+  <p class="quote">"{person.quote}"</p>
+  <p class="quote-signature">{person.first_name} {person.last_name}</p>
+  <p class="quote-signature">{person.job_title}, {person.company}</p>
+</article>
+
+<style>
+  .quote {
+  }
+
+  p.quote-signature {
+    text-align: right;
+  }
+
+  article {
+    padding: 1rem;
+    margin: 1rem;
+  }
+</style>
