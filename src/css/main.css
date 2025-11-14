@@ -58,7 +58,7 @@
   --cta-text-color: #40302f;
   --cta-hover-background: #e5e5e4;
   --green-cta-text-color: #eaeaea;
-  --cta-hover-bacckground-color: rgba(25, 18, 17, 0.75);
+  --cta-hover-background-color: rgba(25, 18, 17, 0.5);
 
   /* margin */
   --main-margin: 95px;
@@ -119,6 +119,5 @@
   /* BACKGROUND COLOR AND MARGIN */
   body {
     background-color: var(--primary-color);
-    margin: 95px;
   }
 }

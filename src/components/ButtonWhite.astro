@@ -1,0 +1,31 @@
+---
+const {CTAText, CTALink} = Astro.props;
+---
+
+<a class="button-white" href={CTALink}>{CTAText}</a>
+
+<style>
+  .button-white:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background: #e5e5e4;
+    box-shadow:
+      inset 5px 5px 5px var(--cta-hover-background-color),
+      inset -5px -5px 5px #f0f0ef;
+  }
+
+  .button-white {
+    padding: 10px 30px;
+    margin: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--cta-font);
+    font-size: var(--cta-font-size);
+    color: var(--cta-text-color);
+    border-radius: 5px;
+    background: #e5e5e4;
+    box-shadow:
+      5px 5px 5px #dadad9,
+      -5px -5px 5px #f0f0ef;
+  }
+</style>
