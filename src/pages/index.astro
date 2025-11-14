@@ -2,8 +2,7 @@
 import "../css/main.css";
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
-import ButtonWhite from "../components/ButtonWhite.astro";
-import ButtonGreen from "../components/ButtonGreen.astro";
+import Header from "../components/Header.astro";
 
 const data = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people", {
   method: "GET",
@@ -17,12 +16,19 @@ console.log(data);
 ---
 
 <Layout>
-  <section class="reviews-section">
-    {data.map((person) => <Reviews {person} />)}
-  </section>
+  <Header />
+  <main>
+    <section class="reviews-section">
+      {data.map((person) => <Reviews {person} />)}
+    </section>
+  </main>
 </Layout>
 
 <style>
+  .main {
+    position: relative;
+  }
+
   .reviews-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
