@@ -1,0 +1,29 @@
+---
+const {customerreview} = Astro.props;
+---
+
+<article>
+  <p class="quote">"{customerreview.quote}"</p>
+  <p class="quote-signature">{customerreview.first_name} {customerreview.last_name}</p>
+  <p class="quote-signature">{customerreview.job_title}, {customerreview.company}</p>
+</article>
+
+<style>
+  .quote {
+  }
+
+  p.quote-signature {
+    text-align: right;
+  }
+
+  article {
+    padding: 10px;
+    margin: 20px;
+  }
+
+  @media (max-width: 600px) {
+    article {
+      margin: 0 20px;
+    }
+  }
+</style>
