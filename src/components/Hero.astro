@@ -1,85 +1,86 @@
 ---
-
+import "../css/main.css";
 ---
 
 <section class="hero">
   <div class="text">
-    <h1>Packaging.</h1>
-    <h2>The silent hero</h2>
+    <p class="hero-h1">Packaging.</p>
+    <p class="hero-h2">The silent hero</p>
   </div>
 
   <div class="icons">
-    <img src="src/assets/hero-icons.webp" alt="Packaging icon" />
-    <img src="src/assets/hero-icons.webp" alt="Packaging icon" />
-    <img src="src/assets/hero-icons.webp" alt="Packaging icon" />
+    <img src="/src/assets/hero-icons.webp" alt="Packaging icon" />
+    <img src="/src/assets/hero-icons.webp" alt="Packaging icon" />
+    <img src="/src/assets/hero-icons.webp" alt="Packaging icon" />
   </div>
-</section>
 
-<style>
-  .hero {
-    background-color: #aebadb;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 2.5rem;
-    padding-right: 8rem;
-    padding-bottom: 2.5rem;
-    padding-left: 0;
-    min-height: 200px;
-  }
-
-  .text {
-    color: #000;
-    margin-left: 62.67px;
-  }
-
-  h1 {
-    padding-top: 5rem;
-    font-size: 2.4rem;
-    font-weight: 400;
-    margin: 0;
-  }
-
-  h2 {
-    font-size: 2.4rem;
-    font-weight: 400;
-    margin-top: 0.4rem;
-  }
-
-  .icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10rem;
-    flex: 1;
-    padding-right: 10rem;
-    padding-bottom: 3rem;
-  }
-
-  .icons img {
-    width: 100px;
-    height: auto;
-  }
-
-  @media (max-width: 900px) {
+  <style>
     .hero {
-      flex-direction: column;
-      text-align: center;
-      padding: 3rem 2rem; /* mobil: lidt indre padding på begge sider */
-      gap: 2.5rem;
-      min-height: auto;
+      background-color: var(--secondary-color);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 3rem 8rem 2rem 0;
+      min-height: 200px;
     }
 
     .text {
-      margin-left: 0; /* fjern den faste venstremargin på mobil */
+      color: var(--dark-brown);
+      margin-left: 62.67px;
+      margin-top: 75px;
+    }
+
+    .hero-h1 {
+      font-family: SpaceGrotesk-Light;
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin: 0;
+      padding-top: 0;
+      line-height: 1.15;
+    }
+
+    .hero-h2 {
+      font-family: SpaceGrotesk-Light;
+      font-size: 2.4rem;
+      font-weight: 300;
+      margin-top: 0.3rem;
+      line-height: 1.15;
     }
 
     .icons {
-      gap: 3rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 10rem;
+      padding-right: 22rem;
+      padding-top: 1.2rem;
     }
 
     .icons img {
-      width: 80px;
+      width: 100px;
+      height: auto;
     }
-  }
-</style>
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .text {
+        margin-left: 0;
+      }
+
+      .icons {
+        gap: 3rem;
+        padding-right: 0;
+        padding-top: 2rem;
+      }
+
+      .icons img {
+        width: 80px;
+      }
+    }
+  </style>
+</section>

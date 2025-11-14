@@ -3,16 +3,16 @@ import "../css/main.css";
 import Layout from "../layouts/Layout.astro";
 import Reviews from "../components/Reviews.astro";
 import Header from "../components/Header.astro";
+import ButtonWhite from "../components/ButtonWhite.astro";
+import ButtonGreen from "../components/ButtonGreen.astro";
+import CaseSection from "../components/CaseSection.astro";
 
 const data = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people", {
   method: "GET",
   headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
   },
 }).then((res) => res.json());
-
-console.log(data);
 ---
 
 <Layout>
@@ -22,6 +22,10 @@ console.log(data);
       {data.map((person) => <Reviews {person} />)}
     </section>
   </main>
+  <CaseSection />
+  <section class="reviews-section">
+    {data.map((person) => <Reviews {person} />)}
+  </section>
 </Layout>
 
 <style>
