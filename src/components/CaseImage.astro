@@ -4,18 +4,41 @@ const { costumercase } = Astro.props;
 
 <article>
   <img src={costumercase.image_url} alt="" />
+  <div class="hover-text-layer">
+    <h3 class="hover-text">{costumercase.company}</h3>
+  </div>
 </article>
 
 <style>
-  article:hover {
+  .hover-text-layer {
+    position: absolute;
+    top: 200px;
+    bottom: 0;
+    left: 50px;
+    right: 0;
+  }
+  h3 {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    opacity: 0;
+  }
+  article:hover img {
+    -webkit-filter: brightness(40%);
+  }
+  article:hover h3 {
+    opacity: 1;
+  }
+
+  article {
+    margin: auto;
+    position: relative;
+    width: 365px;
+    height: 305px;
   }
   img {
     width: 365px;
     height: 305px;
     object-fit: cover;
     border-radius: 20px;
-  }
-  article {
-    margin: auto;
   }
 </style>
