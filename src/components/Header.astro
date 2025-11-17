@@ -12,6 +12,7 @@ import ButtonGreen from "./ButtonGreen.astro";
         <span class="hamburger-line hamburger-line-bottom"></span>
       </span>
     </div>
+    <a href="/index" id="logotype">TÓKI</a>
     <ButtonGreen CTAText="Contact" />
     <nav id="menu-content">
       <ul>
@@ -27,6 +28,12 @@ import ButtonGreen from "./ButtonGreen.astro";
 </header>
 
 <style>
+  #logotype {
+    font-family: var(--p-font);
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--dark-brown);
+  }
   header {
     position: sticky;
     top: 0;
