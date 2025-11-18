@@ -1,0 +1,144 @@
+---
+import "../css/main.css";
+---
+
+<section class="company-breadcrump">
+  <nav class="breadcrumbs">
+    <a href="/">Forside</a>
+    <span>/</span>
+    <a href="/cases">Cases</a>
+    <span>/</span>
+    <span class="current">Case</span>
+  </nav>
+</section>
+
+<section class="company-article">
+  <!-- TOP SECTION -->
+  <div class="company-top">
+    <div class="company-top-left">
+      <h1>The Great Company</h1>
+      <p>
+        Here is a small intro text about which company it is and what TÓKI has done for them, perhaps including which parts of the “toki flow” have been carried out in the work, or rather which parts of the company's packaging production TÓKI has
+        been responsible for.
+      </p>
+    </div>
+
+    <div class="company-top-right">
+      <h3>Assignment:</h3>
+      <p>Help with packaging</p>
+
+      <h3>Qualifications:</h3>
+      <div class="company-qualifications">
+        <p>Packaging design</p>
+        <p>Contact with supplier</p>
+        <p>Shipping counselling</p>
+        <p>Audits</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM SECTION -->
+  <div class="company-bottom">
+    <div class="company-bottom-left">
+      <h3>A small headline</h3>
+      <p>A text about the work Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima, nam non recusandae, molestiae perspiciatis amet iusto temporibus error delectus tenetur porro expedita, culpa dolor?</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima, nam non recusandae, molestiae perspiciatis amet iusto temporibus error delectus tenetur porro expedita, culpa dolor?</p>
+
+      <h3>Maybe another tiny headline</h3>
+      <p>A text about the work Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum minima, nam non recusandae, molestiae perspiciatis amet iusto temporibus error delectus tenetur porro expedita, culpa dolor?</p>
+    </div>
+
+    <div class="company-bottom-right">
+      <img src="/src/assets/tokipackagingbox.webp" alt="Toki packaging" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* -------------------- BREADCRUMBS -------------------- */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #000000;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #777;
+    transition: 0.2s;
+  }
+
+  .breadcrumbs a:hover {
+    color: black;
+  }
+
+  .breadcrumbs .current {
+    color: black;
+    font-weight: 500;
+  }
+
+  .company-breadcrump {
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  /* -------------------- TOP SECTION -------------------- */
+  .company-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .company-top-left h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .company-top-left p {
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .company-top-right h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .company-qualifications p {
+    margin: 0.3rem 0;
+  }
+
+  /* -------------------- BOTTOM SECTION -------------------- */
+  .company-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .company-bottom-left h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .company-bottom-left p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .company-bottom-right img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    padding-bottom: 5rem;
+  }
+</style>

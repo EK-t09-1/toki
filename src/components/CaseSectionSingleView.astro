@@ -1,0 +1,48 @@
+---
+import CaseImage from "./CaseImage.astro";
+import "../css/main.css";
+import ButtonWhite from "./ButtonWhite.astro";
+
+const cases = await fetch("https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases?limit=3", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaGZxZmxqaWxjamFhYWtvZGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDIyOTQsImV4cCI6MjA3ODY3ODI5NH0.yiFB8pWzuK2dKtYF4gzKX4HzT_8VD5RLE9PYRH8a9SU",
+  },
+}).then((res) => res.json());
+
+console.log(cases);
+---
+
+<section>
+  <h2 class="h2-cases-singleview">Explore more cases</h2>
+  <div class="case-boxes">
+    {cases.map((costumercase) => <CaseImage {costumercase} />)}
+  </div>
+  <div class="case-singleview-button">
+    <ButtonWhite CTAText="SEE MORE CASES" CTALink="/" />
+  </div>
+</section>
+
+<style>
+  .case-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+    margin: auto;
+    align-items: center;
+    margin: 45px 95px 45px 95px;
+    gap: 45px;
+  }
+  .case-singleview-button {
+    display: flex;
+    justify-content: center;
+  }
+  .h2-cases-singleview {
+    font-weight: SpaceGrotesk-Light;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-top: 0.3rem;
+    line-height: 1.15;
+    padding-left: 10rem;
+    padding-top: 5rem;
+  }
+</style>
