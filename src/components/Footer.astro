@@ -1,35 +1,45 @@
 ---
 import FooterLinksDiv from "./FooterLinksDiv.astro";
-import ButtonWhite from "./ButtonWhite.astro";
 ---
 
 <footer>
-  <div class="logo">
-    <img src="src/assets/footerlogo.png" alt="" />
-  </div>
-  <FooterLinksDiv
-    headline="Discover"
-    firstLink="/listview"
-    secondLink=""
-    firstText="Cases"
-    secondText="TÓKI flow"
-  />
-  <FooterLinksDiv
-    headline="Learn more"
-    firstLink=""
-    secondLink=""
-    firstText="Certifications"
-    secondText="Careers"
-  />
-  <FooterLinksDiv
-    headline="Who we are"
-    firstLink=""
-    secondLink=""
-    firstText="About TÓKI"
-    secondText="Contact"
-  />
-  <ButtonWhite />
-  <ButtonWhite />
+  <section class="logo-links-buttons-section">
+    <div class="logo">
+      <img src="src/assets/footerlogo.png" alt="" />
+    </div>
+    <div class="links-section">
+      <FooterLinksDiv
+        class="first"
+        headline="Discover"
+        firstLink="/listview"
+        secondLink=""
+        firstText="Cases"
+        secondText="TÓKI flow"
+      />
+      <FooterLinksDiv
+        class="second"
+        headline="Learn more"
+        firstLink=""
+        secondLink=""
+        firstText="Certifications"
+        secondText="Careers"
+      />
+      <FooterLinksDiv
+        class="third"
+        headline="Who we are"
+        firstLink=""
+        secondLink=""
+        firstText="About TÓKI"
+        secondText="Contact"
+      />
+    </div>
+    <div class="buttons">
+      <a class="button-white" href=""> <img src="" alt="" /></a>
+      <a class="button-white" href="">
+        <img src="src/assets/email-icon.png" alt="" /></a
+      >
+    </div>
+  </section>
   <div class="footerflow">
     <img src="" alt="" />
   </div>
@@ -38,4 +48,77 @@ import ButtonWhite from "./ButtonWhite.astro";
   </span>
 </footer>
 
-<style></style>
+<style>
+  footer {
+    background-color: var(--secondary-color);
+    padding: 2em 1em;
+  }
+
+  .logo-links-buttons-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 1em 3em;
+  }
+
+  /*  LOGO  */
+
+  .logo {
+    grid-column: 3 / 4;
+    grid-row: span 5;
+  }
+
+  /* LINKS */
+
+  .links-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-column: 4 / 7;
+    grid-row: span 5;
+    padding: 1em 3em;
+  }
+
+  /* BUTTONS */
+
+  .buttons {
+    grid-column: 7;
+    grid-row: 2;
+  }
+
+  .button-white img {
+    width: 20px;
+  }
+
+  .button-white:hover {
+    cursor: pointer;
+    border-radius: 20px;
+    background: #e5e5e4;
+    box-shadow:
+      inset 2px 2px 2px var(--cta-hover-background-color),
+      inset -2px -2px 2px #f0f0ef;
+  }
+
+  .button-white {
+    padding: 10px 5px 3px 5px;
+    margin: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--cta-font);
+    font-size: var(--cta-font-size);
+    color: var(--cta-text-color);
+    border-radius: 20px;
+    background: #e5e5e4;
+    box-shadow:
+      1px 1px 1px var(--cta-hover-background-color),
+      -1px -1px 1px #dde6fd;
+  }
+
+  /* FLOW */
+
+  /* BOTTTOM SIGNATURE AND VAT */
+
+  span {
+    display: flex;
+    justify-content: center;
+  }
+</style>
