@@ -1,0 +1,27 @@
+---
+const { headline, firstLink, secondLink, firstText, secondText } = Astro.props;
+---
+
+<div class="footerlinks">
+  <h3>{headline}</h3>
+  <a href={firstLink}>{firstText}</a>
+  <a href={secondLink}>{secondText}</a>
+</div>
+
+<style>
+  .footerlinks {
+    display: flex;
+    flex-direction: column;
+  }
+  a {
+    font-size: var(--footer-link-font-size);
+    font-weight: var(--footer-link-font);
+    color: var(--cta-text-color);
+    text-decoration: none;
+    line-height: 30px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
