@@ -3,10 +3,12 @@ const { costumercase } = Astro.props;
 ---
 
 <article>
-  <img src={costumercase.image_url} alt="" />
-  <div class="hover-text-layer">
-    <h3 class="hover-text">{costumercase.company}</h3>
-  </div>
+  <a href="/singleview">
+    <img src={costumercase.image_url} alt="" />
+    <div class="hover-text-layer">
+      <h3 class="hover-text">{costumercase.company}</h3>
+    </div>
+  </a>
 </article>
 
 <style>
