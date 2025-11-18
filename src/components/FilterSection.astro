@@ -1,0 +1,32 @@
+---
+import ButtonWhite from "./ButtonWhite.astro";
+import ButtonGreen from "./ButtonGreen.astro";
+---
+
+<section>
+  <article class="branche-buttons">
+    <ButtonWhite CTAText="Packaging" class="branche-button" />
+    <ButtonWhite CTAText="Fashion" class="branche-button" />
+    <ButtonWhite CTAText="Beauty" class="branche-button" />
+    <ButtonWhite CTAText="Interior" class="branche-button" />
+    <ButtonWhite CTAText="Kitchen utensils" class="branche-button" />
+  </article>
+  <article class="b2b-buttons">
+    <ButtonGreen CTAText="ALL" />
+    <ButtonGreen CTAText="B2B" />
+    <ButtonGreen CTAText="B2C" />
+  </article>
+</section>
+
+<style>
+  .branche-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 130px;
+  }
+  .b2b-buttons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 130px;
+  }
+</style>
