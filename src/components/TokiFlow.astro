@@ -1,0 +1,59 @@
+---
+import "../css/main.css";
+import ButtonWhite from "./ButtonWhite.astro";
+---
+
+<section class="toki-flow">
+  <div class="toki-flow-left">
+    <h1>Discover the TÓKI flow</h1>
+  </div>
+
+  <div class="toki-flow-center">
+    <img src="/src/assets/toki-flow.webp" alt="TÓKI flow" />
+  </div>
+
+  <div class="toki-flow-right">
+    <p>With TÓKI Flow, we create more than packaging — we build systems that work.</p>
+    <p>Solutions that strengthen brands, optimize the value chain, and reduce carbon footprint.</p>
+    <div class="flow-button">
+      <ButtonWhite CTAText="HOW WE WORK" CTALink="/" />
+    </div>
+  </div>
+</section>
+
+<style>
+  /* LEFT */
+  .toki-flow-left h1 {
+    text-align: left;
+    margin-top: 2rem;
+  }
+
+  /* CENTER IMAGE */
+  .toki-flow-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .toki-flow-center img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* RIGHT */
+  .toki-flow-right {
+    text-align: left;
+    max-width: 380px;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-right: 25rem;
+  }
+
+  .toki-flow-right p {
+    line-height: 1.6;
+  }
+
+  /* BUTTON */
+  .flow-button {
+    padding-top: 2rem;
+  }
+</style>
