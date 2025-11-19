@@ -1,27 +1,43 @@
 ---
 import ReviewsQuote from "./ReviewsQuote.astro";
 
-const reviews = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people", {
-  method: "GET",
-  headers: {
-    apikey:
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
-  },
-}).then((res) => res.json());
+const reviews = await fetch(
+  "https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people",
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
+    },
+  }
+).then((res) => res.json());
 
 console.log(reviews);
 ---
 
-<section class="reviews-section">
-  {reviews.map((customerreview) => <ReviewsQuote {customerreview} />)}
+<section>
+  <h2>Voices of our clients</h2>
+  <div class="reviews-section">
+    {reviews.map((customerreview) => <ReviewsQuote {customerreview} />)}
+  </div>
 </section>
 
 <style>
+  section {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding-top: 2em;
+  }
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: var(--space-grotesk-bold);
+  }
+
   .reviews-section {
     display: flex;
     flex-direction: row;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
     gap: 20px;
     padding: 20px;
     margin: 0;
