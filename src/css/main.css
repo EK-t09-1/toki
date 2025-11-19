@@ -66,6 +66,7 @@ body {
   /* margin */
   --main-margin: 95px;
   --narrow-margin: 50px;
+  --section-gap: 40px;
 
   /* DEFINED FONTS */
   h1 {
