@@ -4,12 +4,16 @@ import "../../css/main.css";
 import CaseSectionSingleView from "../../components/CaseSectionSingleView.astro";
 
 export async function getStaticPaths() {
-  const response = await fetch("https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases", {
-    method: "GET",
-    headers: {
-      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaGZxZmxqaWxjamFhYWtvZGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDIyOTQsImV4cCI6MjA3ODY3ODI5NH0.yiFB8pWzuK2dKtYF4gzKX4HzT_8VD5RLE9PYRH8a9SU",
-    },
-  });
+  const response = await fetch(
+    "https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaGZxZmxqaWxjamFhYWtvZGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDIyOTQsImV4cCI6MjA3ODY3ODI5NH0.yiFB8pWzuK2dKtYF4gzKX4HzT_8VD5RLE9PYRH8a9SU",
+      },
+    }
+  );
   const data = await response.json();
 
   return data.map((post) => {
@@ -173,6 +177,10 @@ const { post } = Astro.props;
   /* -------------------- VOICE OF THE CLIENT -------------------- */
   p.quote-signature {
     text-align: right;
+  }
+
+  h2 {
+    font-weight: var(--space-grotesk-bold);
   }
 
   article {
