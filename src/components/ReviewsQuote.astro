@@ -9,16 +9,14 @@ const {customerreview} = Astro.props;
 </article>
 
 <style>
-  .quote {
-  }
-
   p.quote-signature {
+    padding-top: 10px;
     text-align: right;
   }
 
   article {
     padding: 10px;
-    margin: 20px;
+    margin: var(--section-gap);
   }
 
   @media (max-width: 600px) {
