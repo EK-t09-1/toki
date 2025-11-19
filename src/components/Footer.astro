@@ -8,29 +8,44 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
       <img src="/footerlogo.png" alt="" />
     </div>
     <div class="links-section">
-      <FooterLinksDiv class="first" headline="Discover" firstLink="/listview" secondLink="" firstText="Cases" secondText="TÓKI flow" />
-      <FooterLinksDiv class="second" headline="Learn more" firstLink="" secondLink="" firstText="Certifications" secondText="Careers" />
-      <FooterLinksDiv class="third" headline="Who we are" firstLink="" secondLink="" firstText="About TÓKI" secondText="Contact" />
+      <FooterLinksDiv
+        class="first"
+        headline="Discover"
+        firstLink="/listview"
+        secondLink=""
+        firstText="Cases"
+        secondText="TÓKI flow"
+      />
+      <FooterLinksDiv
+        class="second"
+        headline="Learn more"
+        firstLink=""
+        secondLink=""
+        firstText="Certifications"
+        secondText="Careers"
+      />
+      <FooterLinksDiv
+        class="third"
+        headline="Who we are"
+        firstLink=""
+        secondLink=""
+        firstText="About TÓKI"
+        secondText="Contact"
+      />
     </div>
     <div class="buttons">
       <a class="button-white" href="">
         <img src="" alt="" />
         <img src="/linkedin.png" alt="" /></a
       >
-      <a class="button-white" href=""> <img class="email-icon" src="/email-icon.png" alt="" /></a>
+      <a class="button-white" href="">
+        <img class="email-icon" src="/email-icon.png" alt="" /></a
+      >
     </div>
   </section>
-  <section class="address-and-flow">
-    <div>
-      <p>TÓKI I/S</p>
-      <p>Rigtig Adresse 404</p>
-      <p>4300 Holbæk</p>
-      <p>Denmark</p>
-    </div>
-    <div class="footerflow">
-      <img src="/toki-flow-footer.png" alt="" />
-    </div>
-  </section>
+  <div class="footerflow">
+    <img src="/toki-flow-footer.png" alt="" />
+  </div>
   <span>
     <p>© 2025 TÓKI I/S - VAT: 45988058</p>
   </span>
@@ -104,12 +119,6 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
   }
 
   /* FLOW */
-
-  .address-and-flow {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 3em;
-  }
 
   .footerflow {
     display: flex;
