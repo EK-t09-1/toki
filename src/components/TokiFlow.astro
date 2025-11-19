@@ -10,7 +10,7 @@ import ButtonWhite from "./ButtonWhite.astro";
 
   <div class="toki-flow-center">
     <picture>
-      <source srcset="/toki-flow-mobile.png" media="(max-width: 650px)" />
+      <source srcset="/toki-flow-mobile.png" media="(max-width: 800px)" />
       <img src="/toki-flow.webp" alt="TÓKI flow" />
     </picture>
   </div>
@@ -40,6 +40,7 @@ import ButtonWhite from "./ButtonWhite.astro";
   }
 
   .toki-flow-center img {
+    padding-top: var(--section-gap);
     max-width: 100%;
     height: auto;
   }
@@ -69,7 +70,7 @@ import ButtonWhite from "./ButtonWhite.astro";
   .toki-flow {
     margin: var(--main-margin);
   }
-  @media (max-width: 650px) {
+  @media (max-width: 800px) {
     .toki-flow-left h2 {
       text-align: center;
     }
