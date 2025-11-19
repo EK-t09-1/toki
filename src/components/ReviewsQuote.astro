@@ -1,17 +1,27 @@
 ---
-const {customerreview} = Astro.props;
+const { customerreview } = Astro.props;
 ---
 
 <article>
   <p class="quote">"{customerreview.quote}"</p>
-  <p class="quote-signature">{customerreview.first_name} {customerreview.last_name}</p>
-  <p class="quote-signature">{customerreview.job_title}, {customerreview.company}</p>
+  <p class="quote-signature">
+    {customerreview.first_name}
+    {customerreview.last_name}
+  </p>
+  <p class="quote-signature">
+    {customerreview.job_title}, {customerreview.company}
+  </p>
 </article>
 
 <style>
   p.quote-signature {
     padding-top: 10px;
     text-align: right;
+    font-weight: var(--space-grotesk-bold);
+  }
+
+  .quote {
+    margin-bottom: 1.5em;
   }
 
   article {
