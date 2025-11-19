@@ -5,11 +5,14 @@ import ButtonWhite from "./ButtonWhite.astro";
 
 <section class="toki-flow">
   <div class="toki-flow-left">
-    <h1>Discover the TÓKI flow</h1>
+    <h2>Discover the TÓKI flow</h2>
   </div>
 
   <div class="toki-flow-center">
-    <img src="/toki-flow.webp" alt="TÓKI flow" />
+    <picture>
+      <source srcset="/toki-flow-mobile.png" media="(max-width: 650px)" />
+      <img src="/toki-flow.webp" alt="TÓKI flow" />
+    </picture>
   </div>
 
   <div class="toki-flow-right">
@@ -29,7 +32,7 @@ import ButtonWhite from "./ButtonWhite.astro";
 
 <style>
   /* LEFT */
-  .toki-flow-left h1 {
+  .toki-flow-left h2 {
     text-align: left;
     margin-top: 2rem;
     padding-top: 5rem;
@@ -69,6 +72,24 @@ import ButtonWhite from "./ButtonWhite.astro";
     padding-top: 2rem;
     margin-bottom: var(--section-gap);
   }
+
+  @media (max-width: 650px) {
+    .toki-flow-left h2 {
+      text-align: center;
+    }
+    picture {
+      padding-top: var(--section-gap);
+      padding-bottom: 10px;
+    }
+    .toki-flow-right {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      max-width: 380px;
+      margin: 0 auto; /* <-- THIS centers the whole block */
+      margin-top: 2rem;
+      align-items: center; /* optional: centers children horizontally */
+    }
   .toki-flow {
     margin: var(--main-margin);
   }
