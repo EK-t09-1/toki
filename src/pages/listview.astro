@@ -10,6 +10,13 @@ import FilterSection from "../components/FilterSection.astro";
 <Layout>
   <main>
     <Hero />
+    <section class="company-breadcrump">
+      <nav class="breadcrumbs">
+        <a href="/">Forside</a>
+        <span>/</span>
+        <a href="/listview/" class="current">Cases</a>
+      </nav>
+    </section>
     <FilterSection />
     <ListViewCaseSection />
     <Reviews />
@@ -17,6 +24,36 @@ import FilterSection from "../components/FilterSection.astro";
   </main>
 </Layout>
 
+<style>
+  /* -------------------- BREADCRUMBS -------------------- */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #000000;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #777;
+    transition: 0.2s;
+  }
+
+  .breadcrumbs a:hover {
+    color: black;
+  }
+
+  .breadcrumbs .current {
+    color: black;
+    font-weight: 500;
+  }
+
+  .company-breadcrump {
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+</style>
 <script>
   document.querySelectorAll(".b2b-buttons a").forEach((filterbtn) => filterbtn.addEventListener("click", filtrer));
   function filtrer(e) {
