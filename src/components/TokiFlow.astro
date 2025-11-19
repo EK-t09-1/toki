@@ -13,14 +13,8 @@ import ButtonWhite from "./ButtonWhite.astro";
   </div>
 
   <div class="toki-flow-right">
-    <p>
-      With TÓKI Flow, we create more than packaging — we build systems that
-      work.
-    </p>
-    <p>
-      Solutions that strengthen brands, optimize the value chain, and reduce
-      carbon footprint.
-    </p>
+    <p>With TÓKI Flow, we create more than packaging — we build systems that work.</p>
+    <p>Solutions that strengthen brands, optimize the value chain, and reduce carbon footprint.</p>
     <div class="flow-button">
       <ButtonWhite CTAText="HOW WE WORK" CTALink="/" />
     </div>
@@ -48,11 +42,13 @@ import ButtonWhite from "./ButtonWhite.astro";
 
   /* RIGHT */
   .toki-flow-right {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     max-width: 380px;
     margin-left: auto;
     margin-top: 2rem;
-    margin-right: 25rem;
+    margin-right: 20px;
   }
 
   .toki-flow-right p {
@@ -61,7 +57,9 @@ import ButtonWhite from "./ButtonWhite.astro";
 
   /* BUTTON */
   .flow-button {
+    display: flex;
+    justify-content: center;
     padding-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: var(--section-gap);
   }
 </style>
