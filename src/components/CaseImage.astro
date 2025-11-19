@@ -3,7 +3,7 @@ const { costumercase } = Astro.props;
 ---
 
 <article class={costumercase.b2b ? "aktiv" : "passiv"}>
-  <a href="/singleview">
+  <a href=`/single/${costumercase.id}`>
     <img src={costumercase.image_url} alt="" />
     <div class="hover-text-layer">
       <h3 class="hover-text">{costumercase.company}</h3>
