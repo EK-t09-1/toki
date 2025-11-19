@@ -1,0 +1,212 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../css/main.css";
+import CaseSectionSingleView from "../../components/CaseSectionSingleView.astro";
+
+export async function getStaticPaths() {
+  const response = await fetch("https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaGZxZmxqaWxjamFhYWtvZGh3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMDIyOTQsImV4cCI6MjA3ODY3ODI5NH0.yiFB8pWzuK2dKtYF4gzKX4HzT_8VD5RLE9PYRH8a9SU",
+    },
+  });
+  const data = await response.json();
+
+  return data.map((post) => {
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<Layout>
+  <main>
+    <section class="company-breadcrump">
+      <nav class="breadcrumbs">
+        <a href="/">Forside</a>
+        <span>/</span>
+        <a href="/listview/">Cases</a>
+        <span>/</span>
+        <span class="current">{post.company}</span>
+      </nav>
+    </section>
+
+    <section class="company-article">
+      <!-- TOP SECTION -->
+      <div class="company-top">
+        <div class="company-top-left">
+          <h1>{post.company}</h1>
+          <p>
+            {post.company_description}
+          </p>
+        </div>
+
+        <div class="company-top-right">
+          <h3>Assignment:</h3>
+          <p>{post.assignment}</p>
+
+          <h3>Qualifications:</h3>
+          <div class="company-qualifications">
+            <p>{post.qualifications}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOTTOM SECTION -->
+      <div class="company-bottom">
+        <div class="company-bottom-left">
+          <h3>{post.article_headline}</h3>
+          <p>{post.article}</p>
+
+          <h3>{post.second_headline}</h3>
+          <p>{post.article}</p>
+        </div>
+
+        <div class="company-bottom-right">
+          <img src={post.image_url} alt="Toki packaging" />
+        </div>
+      </div>
+    </section>
+    <!-- VOICE OF THE CLIENT -->
+    <section class="review-section">
+      <h2 class="clientvoice">Voice of the client</h2>
+      <article>
+        <p class="quote">{post.quote}</p>
+        <p class="quote-signature">{post.name}</p>
+        <p class="quote-signature">{post.job_title}, {post.company}</p>
+      </article>
+    </section>
+    <CaseSectionSingleView />
+  </main>
+</Layout>
+
+<style>
+  /* -------------------- BREADCRUMBS -------------------- */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #000000;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #777;
+    transition: 0.2s;
+  }
+
+  .breadcrumbs a:hover {
+    color: black;
+  }
+
+  .breadcrumbs .current {
+    color: black;
+    font-weight: 500;
+  }
+
+  .company-breadcrump {
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  /* -------------------- TOP SECTION -------------------- */
+  .company-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+  }
+
+  .company-top-left h1 {
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .company-top-left p {
+    line-height: 1.6;
+    max-width: 600px;
+  }
+
+  .company-top-right h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .company-qualifications p {
+    margin: 0.3rem 0;
+  }
+
+  /* -------------------- BOTTOM SECTION -------------------- */
+  .company-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .company-bottom-left h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .company-bottom-left p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .company-bottom-right img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    padding-bottom: 5rem;
+  }
+  /* -------------------- VOICE OF THE CLIENT -------------------- */
+  p.quote-signature {
+    text-align: right;
+  }
+
+  article {
+    padding: 10px;
+    margin: 20px;
+  }
+
+  @media (max-width: 600px) {
+    article {
+      margin: 0 20px;
+    }
+  }
+  .review-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    gap: 20px;
+    padding: 20px;
+    margin: 0;
+    padding: 50px;
+  }
+  .quote {
+    max-width: 400px;
+  }
+  .clientvoice {
+    padding: 50px;
+  }
+
+  @media (max-width: 600px) {
+    .review-section {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+</style>
