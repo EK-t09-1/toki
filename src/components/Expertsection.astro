@@ -7,10 +7,8 @@ import ButtonWhite from "./ButtonWhite.astro";
   <div class="experts-content">
     <h2>Meet our experts</h2>
     <p>
-      With over a decade of experience and a passion for purposeful design, TÓKI
-      understands how to create packaging that not only stands out on the
-      shelves but also streamlines production and minimizes supply chain risks,
-      helping brands save money while making a lasting impression.
+      With over a decade of experience and a passion for purposeful design, TÓKI understands how to create packaging that not only stands out on the shelves but also streamlines production and minimizes supply chain risks, helping brands save money
+      while making a lasting impression.
     </p>
 
     <ButtonWhite CTAText="LEARN MORE" CTALink="/index" />
@@ -29,17 +27,18 @@ import ButtonWhite from "./ButtonWhite.astro";
     justify-content: space-between;
     gap: 60px;
     font-weight: "Space Grotesk", sans-serif;
+    margin: var(--main-margin);
   }
 
   /* 89px venstre-margin til teksten */
   .experts-content {
     max-width: 480px;
-    margin-left: 89px;
+    /* margin-left: 89px; */
   }
 
   /* 👇 32px højre-margin på billedet */
   .experts-image {
-    margin-right: 32px;
+    /* margin-right: 32px; */
   }
 
   .experts-image img {
@@ -50,7 +49,7 @@ import ButtonWhite from "./ButtonWhite.astro";
   }
 
   .experts-content h2 {
-    font-weight: var(--h2-font);
+    font-weight: var(--space-grotesk-bold);
     font-size: var(--h2-font-size);
     color: var(--dark-brown);
   }

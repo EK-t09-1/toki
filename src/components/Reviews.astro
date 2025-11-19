@@ -1,16 +1,12 @@
 ---
 import ReviewsQuote from "./ReviewsQuote.astro";
 
-const reviews = await fetch(
-  "https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people",
-  {
-    method: "GET",
-    headers: {
-      apikey:
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
-    },
-  }
-).then((res) => res.json());
+const reviews = await fetch("https://twfzmayntvnffeuqxncv.supabase.co/rest/v1/people", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR3ZnptYXludHZuZmZldXF4bmN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMwMjc0MTMsImV4cCI6MjA3ODYwMzQxM30.I6Dor7rsziUJgcWk4QJQ1qDSfR9sQdh3pOAzuVDl0wM",
+  },
+}).then((res) => res.json());
 
 console.log(reviews);
 ---
@@ -40,7 +36,7 @@ console.log(reviews);
     flex-direction: row;
     gap: 20px;
     padding: 20px;
-    margin: 0;
+    margin: var(--narrow-margin);
   }
 
   @media (max-width: 600px) {

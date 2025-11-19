@@ -8,39 +8,16 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
       <img src="/footerlogo.png" alt="" />
     </div>
     <div class="links-section">
-      <FooterLinksDiv
-        class="first"
-        headline="Discover"
-        firstLink="/listview"
-        secondLink=""
-        firstText="Cases"
-        secondText="TÓKI flow"
-      />
-      <FooterLinksDiv
-        class="second"
-        headline="Learn more"
-        firstLink=""
-        secondLink=""
-        firstText="Certifications"
-        secondText="Careers"
-      />
-      <FooterLinksDiv
-        class="third"
-        headline="Who we are"
-        firstLink=""
-        secondLink=""
-        firstText="About TÓKI"
-        secondText="Contact"
-      />
+      <FooterLinksDiv class="first" headline="Discover" firstLink="/listview" secondLink="" firstText="Cases" secondText="TÓKI flow" />
+      <FooterLinksDiv class="second" headline="Learn more" firstLink="" secondLink="" firstText="Certifications" secondText="Careers" />
+      <FooterLinksDiv class="third" headline="Who we are" firstLink="" secondLink="" firstText="About TÓKI" secondText="Contact" />
     </div>
     <div class="buttons">
       <a class="button-white" href="">
         <img src="" alt="" />
         <img src="/linkedin.png" alt="" /></a
       >
-      <a class="button-white" href="">
-        <img class="email-icon" src="/email-icon.png" alt="" /></a
-      >
+      <a class="button-white" href=""> <img class="email-icon" src="/email-icon.png" alt="" /></a>
     </div>
   </section>
   <section class="address-and-flow">
@@ -62,7 +39,9 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
 <style>
   footer {
     background-color: var(--secondary-color);
-    padding: 2em 1em;
+    padding: var(--narrow-margin);
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   .logo-links-buttons-section {
