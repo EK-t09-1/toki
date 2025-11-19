@@ -43,9 +43,17 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
       >
     </div>
   </section>
-  <div class="footerflow">
-    <img src="" alt="" />
-  </div>
+  <section class="address-and-flow">
+    <div>
+      <p>TÓKI I/S</p>
+      <p>Rigtig Adresse 404</p>
+      <p>4300 Holbæk</p>
+      <p>Denmark</p>
+    </div>
+    <div class="footerflow">
+      <img src="src/assets/toki-flow-footer.png" alt="" />
+    </div>
+  </section>
   <span>
     <p>© 2025 TÓKI I/S - VAT: 45988058</p>
   </span>
@@ -117,6 +125,24 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
   }
 
   /* FLOW */
+
+  .address-and-flow {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3em;
+  }
+
+  .footerflow {
+    display: flex;
+    justify-content: end;
+    flex-shrink: inherit;
+  }
+
+  @media (max-width: 1100px) {
+    .footerflow {
+      display: none;
+    }
+  }
 
   /* BOTTTOM SIGNATURE AND VAT */
 
