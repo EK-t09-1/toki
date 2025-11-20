@@ -1,10 +1,9 @@
 ---
 import CaseImage from "./CaseImage.astro";
-import "../css/main.css";
 import ButtonWhite from "./ButtonWhite.astro";
 
 const cases = await fetch(
-  "https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases?limit=3",
+  "https://fhhfqfljilcjaaakodhw.supabase.co/rest/v1/cases?limit=6",
   {
     method: "GET",
     headers: {
@@ -17,37 +16,31 @@ const cases = await fetch(
 console.log(cases);
 ---
 
-<section>
-  <h2 class="h2-cases-singleview">Explore more cases</h2>
-  <div class="case-boxes">
-    {cases.map((costumercase) => <CaseImage {costumercase} />)}
-  </div>
-  <div class="case-singleview-button">
-    <ButtonWhite CTAText="VIEW MORE CASES" CTALink="/listview/" />
-  </div>
+<h2>Explore our cases</h2>
+<section class="case-section">
+  {cases.map((costumercase) => <CaseImage {costumercase} />)}
 </section>
+<div class="more-button">
+  <ButtonWhite CTAText="VIEW MORE" CTALink="" />
+</div>
 
 <style>
-  .case-boxes {
+  section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     margin: auto;
     align-items: center;
     margin: 45px 95px 45px 95px;
     gap: 45px;
   }
-  .case-singleview-button {
+  .more-button {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    padding-bottom: 5rem;
+    margin-bottom: 50px;
   }
-  .h2-cases-singleview {
+  h2 {
+    text-align: center;
     font-weight: var(--space-grotesk-bold);
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-top: 0.3rem;
-    line-height: 1.15;
-    padding-left: 10rem;
-    padding-top: 5rem;
   }
 </style>

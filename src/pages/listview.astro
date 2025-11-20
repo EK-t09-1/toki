@@ -1,5 +1,68 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Reviews from "../components/Reviews.astro";
+import Hero from "../components/Hero.astro";
+import Expertsection from "../components/Expertsection.astro";
+import ListViewCaseSection from "../components/ListViewCaseSection.astro";
+import FilterSection from "../components/FilterSection.astro";
 ---
 
-<Layout />
+<Layout>
+  <main>
+    <Hero />
+    <section class="company-breadcrump">
+      <nav class="breadcrumbs">
+        <a href="/">Forside</a>
+        <span>/</span>
+        <a href="/listview/" class="current">Cases</a>
+      </nav>
+    </section>
+    <FilterSection />
+    <ListViewCaseSection />
+    <Reviews />
+    <Expertsection />
+  </main>
+</Layout>
+
+<style>
+  /* -------------------- BREADCRUMBS -------------------- */
+  .breadcrumbs {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #000000;
+  }
+
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #777;
+    transition: 0.2s;
+  }
+
+  .breadcrumbs a:hover {
+    color: black;
+  }
+
+  .breadcrumbs .current {
+    color: black;
+    font-weight: 500;
+  }
+
+  .company-breadcrump {
+    margin: 0 auto;
+    padding: 2rem 2rem;
+  }
+</style>
+<script>
+  document.querySelectorAll(".b2b-buttons a").forEach((filterbtn) => filterbtn.addEventListener("click", filtrer));
+  function filtrer(e) {
+    document.querySelectorAll(".case-section article").forEach((elm) => elm.classList.remove("hide"));
+    if (e.target.textContent == "B2B") {
+      document.querySelectorAll(".passiv").forEach((elm) => elm.classList.add("hide"));
+    }
+    if (e.target.textContent == "B2C") {
+      document.querySelectorAll(".aktiv").forEach((elm) => elm.classList.add("hide"));
+    }
+  }
+</script>

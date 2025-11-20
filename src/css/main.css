@@ -1,3 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
 /* FONT FACE */
 @font-face {
   font-family: SpaceGrotesk;
@@ -54,8 +64,9 @@
   --cta-hover-background-color: rgba(25, 18, 17, 0.5);
 
   /* margin */
-  --main-margin: 95px;
-  --narrow-margin: 50px;
+  --main-margin: 0 95px;
+  --narrow-margin: 0 50px;
+  --section-gap: 40px;
 
   /* DEFINED FONTS */
   h1 {
@@ -112,5 +123,8 @@
   /* BACKGROUND COLOR AND MARGIN */
   body {
     background-color: var(--primary-color);
+  }
+  .hide {
+    display: none;
   }
 }

@@ -1,5 +1,5 @@
 ---
-const { CTAText, CTALink } = Astro.props;
+const {CTAText, CTALink} = Astro.props;
 import ButtonGreen from "./ButtonGreen.astro";
 ---
 
@@ -29,6 +29,10 @@ import ButtonGreen from "./ButtonGreen.astro";
 
 <style>
   #logotype {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     font-weight: var(--p-font);
     font-size: 25px;
     text-decoration: none;
@@ -45,6 +49,7 @@ import ButtonGreen from "./ButtonGreen.astro";
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
   }
 
   .button-green {

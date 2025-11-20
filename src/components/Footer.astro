@@ -5,7 +5,7 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
 <footer>
   <section class="logo-links-buttons-section">
     <div class="logo">
-      <img src="src/assets/footerlogo.png" alt="" />
+      <img src="/footerlogo.png" alt="" />
     </div>
     <div class="links-section">
       <FooterLinksDiv
@@ -34,14 +34,17 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
       />
     </div>
     <div class="buttons">
-      <a class="button-white" href=""> <img src="" alt="" /></a>
       <a class="button-white" href="">
-        <img src="src/assets/email-icon.png" alt="" /></a
+        <img src="" alt="" />
+        <img src="/linkedin.png" alt="" /></a
+      >
+      <a class="button-white" href="">
+        <img class="email-icon" src="/email-icon.png" alt="" /></a
       >
     </div>
   </section>
   <div class="footerflow">
-    <img src="" alt="" />
+    <img src="/toki-flow-footer.png" alt="" />
   </div>
   <span>
     <p>© 2025 TÓKI I/S - VAT: 45988058</p>
@@ -51,7 +54,9 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
 <style>
   footer {
     background-color: var(--secondary-color);
-    padding: 2em 1em;
+    padding: var(--narrow-margin);
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   .logo-links-buttons-section {
@@ -85,7 +90,7 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
     grid-row: 2;
   }
 
-  .button-white img {
+  .email-icon {
     width: 20px;
   }
 
@@ -114,6 +119,18 @@ import FooterLinksDiv from "./FooterLinksDiv.astro";
   }
 
   /* FLOW */
+
+  .footerflow {
+    display: flex;
+    justify-content: end;
+    flex-shrink: inherit;
+  }
+
+  @media (max-width: 1100px) {
+    .footerflow {
+      display: none;
+    }
+  }
 
   /* BOTTTOM SIGNATURE AND VAT */
 
