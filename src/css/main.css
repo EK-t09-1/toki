@@ -11,7 +11,7 @@ body {
 /* FONT FACE */
 @font-face {
   font-family: SpaceGrotesk;
-  src: url(../assets/fonts/SpaceGrotesk-VariableFont_wght.ttf);
+  src: url(../assets/fonts/SpaceGrotesk-VariableFont_wght.woff2);
   font-weight: 300 700;
 }
 
