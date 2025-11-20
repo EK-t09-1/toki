@@ -104,7 +104,7 @@ body {
   .footer-link {
     font-weight: var(--footer-link-font);
     font-size: var(--footer-link-font-size);
-    :hover {
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -115,7 +115,7 @@ body {
   .cta {
     font-weight: var(--cta-font);
     font-size: var(--cta-font-size);
-    :active {
+    &:active {
       font-weight: var(--cta-click-font);
     }
   }
