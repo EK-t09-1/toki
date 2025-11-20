@@ -1,10 +1,14 @@
 ---
-const { costumercase } = Astro.props;
+const {costumercase} = Astro.props;
 ---
 
 <article class={costumercase.b2b ? "aktiv" : "passiv"}>
   <a href=`/single/${costumercase.id}`>
-    <img src={costumercase.image_url} alt="" />
+    <img
+      src={costumercase.image_url}
+      alt={`Customer case: ${costumercase.company}`}
+      loading="lazy"
+    />
     <div class="hover-text-layer">
       <h3 class="hover-text">{costumercase.company}</h3>
     </div>
