@@ -23,10 +23,22 @@ import ButtonGreen from "./ButtonGreen.astro";
     display: flex;
     flex-direction: row;
     margin: 0 130px;
+    flex-wrap: wrap;
   }
   .b2b-buttons {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     margin: 0 130px;
+  }
+  @media (width<800px) {
+    .b2b-buttons {
+      margin: 0;
+      justify-content: center;
+    }
+    .branche-buttons {
+      margin: 0;
+      justify-content: center;
+    }
   }
 </style>
