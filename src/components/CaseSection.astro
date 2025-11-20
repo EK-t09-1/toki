@@ -44,4 +44,14 @@ console.log(cases);
     display: flex;
     justify-content: center;
   }
+  @media (width<800px) {
+    .cases {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: auto;
+      align-items: center;
+      margin: 45px 0 45px 0;
+      gap: 45px;
+    }
+  }
 </style>
